@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "chatrooms",
+  "info": {
+    "name": "chatroom"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "roomid": {
+      "type": "string"
+    },
+    "chats": {
+      "via": "chatroom",
+      "collection": "chat"
+    },
+    "roomname": {
+      "type": "string"
+    },
+    "users": {
+      "via": "chatrooms",
+      "plugin": "users-permissions",
+      "collection": "user"
+    }
+  }
+}
